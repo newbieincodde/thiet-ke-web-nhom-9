@@ -1,17 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio Cá Nhân</title>
 </head>
 <body>
-    <h1>Bài tập Thiết Kế Web - Nhóm 9</h1>
-    <h2>Danh sách thành viên:</h2>
-    <p>1. Leader: Phạm Ngọc Nhân- email: 125002885@lachong.edu.vn</p>
-    <p>1. member: Trần Quốc Quang- email: 125000463@lachong.edu.vn</p>
-    <p>2. member: Trần Lê Minh Huy- email: 123001137@lachong.edu.vn</p>
-    <p>3. member: Trần Gia Huy- email: 125000065@lachong.edu.vn</p>
-    <!-- Các thành viên khác sẽ thêm tiếp phần của họ xuống dưới dòng này -->
+
+    <!--
+        Thẻ <header>:
+        - VAI TRÒ: Chứa phần mở đầu hoặc nhóm các công cụ định vị thương hiệu của trang web.
+        - Ý NGHĨA NGỮ NGHĨA: Đại diện cho khu vực đầu trang, chứa logo/tên cá nhân và thanh điều hướng chính (<nav>).
+    -->
+    <header>
+        <h1>Trần Gia Hyy
+        </h1>
+
+        <!--
+            Thẻ <nav>:
+            - VAI TRÒ: Thanh điều hướng trang web.
+            - Ý NGHĨA NGỮ NGHĨA: Định nghĩa khu vực chứa các liên kết chuyển hướng nội bộ quan trọng (#about, #projects, #skills, #contact).
+        -->
+        <nav>
+            <ul>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#skills">Kỹ năng</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--
+        Thẻ <main>:
+        - VAI TRÒ: Chứa nội dung trọng tâm và chính yếu của tài liệu HTML.
+        - Ý NGHĨA NGỮ NGHĨA: Biểu thị khu vực nội dung độc nhất, không lặp lại giữa các trang. Mỗi trang web chỉ có duy nhất một thẻ <main>.
+    -->
+    <main>
+
+        <!--
+            Thẻ <section> (Section 1: Giới thiệu bản thân):
+            - VAI TRÒ: Phân vùng chủ đề nội dung logic.
+            - Ý NGHĨA NGỮ NGHĨA: Nhóm các nội dung cùng chung chủ đề giới thiệu cá nhân, bắt đầu bằng một tiêu đề (<h2>).
+        -->
+        <section id="about">
+            <h2>Giới thiệu bản thân</h2>
+            <p>Xin chào! Tôi là một Lập trình viên Web đam mê học hỏi, luôn chú trọng viết mã nguồn sạch và áp dụng chuẩn Semantic HTML.</p>
+        </section>
+
+        <!--
+            Thẻ <section> (Section 2: Danh sách dự án):
+            - VAI TRÒ: Phân vùng chủ đề tập hợp các sản phẩm/dự án.
+            - Ý NGHĨA NGỮ NGHĨA: Nhóm các đơn vị nội dung độc lập (<article>) đại diện cho từng dự án riêng lẻ.
+        -->
+        <section id="projects">
+            <h2>Danh sách các dự án</h2>
+
+            <!--
+                Thẻ <article> (Dự án 1):
+                - VAI TRÒ: Đơn vị nội dung tự hoàn chỉnh.
+                - Ý NGHĨA NGỮ NGHĨA: Độc lập với các phần khác, có thể đứng riêng lẻ hoặc phân phối lại mà vẫn đầy đủ thông tin.
+            -->
+            <article>
+                <h3>Dự án 1: Trang web Bán hàng</h3>
+                <p>Ứng dụng thương mại điện tử đơn giản tích hợp giỏ hàng và thanh toán.</p>
+            </article>
+
+            <!--
+                Thẻ <article> (Dự án 2):
+                - VAI TRÒ: Đơn vị nội dung tự hoàn chỉnh.
+                - Ý NGHĨA NGỮ NGHĨA: Độc lập với các phần khác, thể hiện thông tin riêng biệt cho Dự án 2.
+            -->
+            <article>
+                <h3>Dự án 2: Ứng dụng Quản lý Công việc</h3>
+                <p>Công cụ quản lý công việc hàng ngày hỗ trợ kéo thả và lưu trữ dữ liệu.</p>
+            </article>
+
+            <!--
+                Thẻ <article> (Dự án 3):
+                - VAI TRÒ: Đơn vị nội dung tự hoàn chỉnh.
+                - Ý NGHĨA NGỮ NGHĨA: Độc lập với các phần khác, thể hiện thông tin riêng biệt cho Dự án 3.
+            -->
+            <article>
+                <h3>Dự án 3: Blog Cá nhân</h3>
+                <p>Trang blog tĩnh được xây dựng chuẩn HTML5 Semantic tối ưu SEO.</p>
+            </article>
+        </section>
+
+        <!--
+            Thẻ <section> (Section 3: Kỹ năng chuyên môn):
+            - VAI TRÒ: Phân vùng chủ đề thể hiện kỹ năng.
+            - Ý NGHĨA NGỮ NGHĨA: Định nhóm thông tin kỹ năng lập trình dưới một phần tiêu đề rõ ràng.
+        -->
+        <section id="skills">
+            <h2>Kỹ năng chuyên môn</h2>
+            <ul>
+                <li>HTML5 / Semantic HTML</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Git / GitHub</li>
+            </ul>
+        </section>
+
+        <!--
+            Thẻ <section> (Section 4: Liên hệ):
+            - VAI TRÒ: Phân vùng chủ đề cho thông tin liên lạc.
+            - Ý NGHĨA NGỮ NGHĨA: Gom nhóm thông tin hỗ trợ người dùng/nhà tuyển dụng tương tác với chủ sở hữu trang web.
+        -->
+        <section id="contact">
+            <h2>Liên hệ</h2>
+            <p>Email: contact@example.com | Điện thoại: 0123 456 789</p>
+        </section>
+
+    </main>
+
+    <!--
+        Thẻ <footer>:
+        - VAI TRÒ: Chân trang của website.
+        - Ý NGHĨA NGỮ NGHĨA: Chứa thông tin bản quyền, thông tin tác giả và các liên kết hỗ trợ cuối trang.
+    -->
+    <footer>
+        <p>&copy; 2026 Portfolio Cá Nhân. Tất cả quyền được bảo lưu.</p>
+        <p>Email liên hệ: <a href="mailto:contact@example.com">contact@example.com</a></p>
+    </footer>
+
 </body>
 </html>
