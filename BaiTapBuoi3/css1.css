@@ -1,0 +1,13 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+    gap: 20px; /* khoảng cách giữa các cột/hàng */
+    padding: 20px;
+  }
+  
+  .grid-item {
+    background-color: #c4bfbf; /* màu nền xám nhạt */
+    border-radius: 10px;       /* bo góc */
+    padding: 20px;
+    text-align: center;
+  }
