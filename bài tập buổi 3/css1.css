@@ -1,0 +1,168 @@
+/*Hoạt Động 1
+/* 1. Căn giữa toàn bộ container ra chính giữa màn hình bằng Flexbox */
+.container {
+    
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    min-height: 100vh;       /* Chiều cao phủ toàn bộ màn hình */
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  
+  /* 2. Bố cục lưới CSS Grid 3 cột bằng nhau bên trong container */
+  .grid-container {
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+    gap: 20px;                             /* Khoảng cách giữa các cột/hàng là 20px */
+    width: 100%;
+    max-width: 900px;                      /* Giới hạn chiều rộng để giao diện cân đối */
+  }
+  
+  /* 3. Định dạng từng thẻ cột trong Grid */
+  .grid-item {
+  
+    background-color: #f0f0f0;             /* Màu nền xám nhạt */
+    border-radius: 10px;                   /* Bo góc 10px */
+    padding: 20px;                         /* Khoảng đệm bên trong */
+    text-align: center;                    /* Căn giữa chữ */
+  }
+
+  /* Hoạt Động 2
+  /* Reset cơ bản */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 1. Cấu trúc Layout tổng thể bằng CSS Grid */
+.portfolio-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* Sidebar 250px, Main chiếm phần còn lại */
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+  min-height: 100vh;
+  gap: 15px;
+  padding: 15px;
+}
+
+/* Gán các khu vực tương ứng với grid-area */
+.header  { grid-area: header;  background-color: #2c3e50; color: white; padding: 20px; text-align: center; }
+.sidebar { grid-area: sidebar; background-color: #ecf0f1; padding: 20px; }
+.main    { grid-area: main;    background-color: #ffffff; padding: 20px; border: 1px solid #ddd; }
+.footer  { grid-area: footer;  background-color: #34495e; color: white; padding: 15px; text-align: center; }
+
+/* 2. Khu vực Skills bằng Flexbox */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;          /* Tự động xuống dòng khi thiếu không gian */
+  justify-content: center;  /* Căn giữa các item */
+  gap: 15px;                /* Khoảng cách giữa các item là 15px */
+  margin-top: 15px;
+}
+
+.skill-item {
+  background-color: #e8f4f8;
+  color: #2c3e50;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  border: 1px solid #bce8f1;
+}
+
+/*Hoạt động 3
+/* 1. Khai báo biến CSS (CSS Variables) để tái sử dụng */
+:root {
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  
+  --color-primary: #2c3e50;
+  --color-secondary: #34495e;
+  --color-bg-light: #ecf0f1;
+  --color-accent-bg: #e8f4f8;
+  --color-border: #bce8f1;
+  --color-white: #ffffff;
+  
+  --border-radius: 10px;
+  --border-radius-pill: 20px;
+}
+
+/* Reset cơ bản */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Cấu trúc Layout tổng thể (CSS Grid) */
+.portfolio-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+  min-height: 100vh;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+}
+
+/* Gán vị trí Grid Area */
+.header  { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main    { grid-area: main; }
+.footer  { grid-area: footer; }
+
+/* 3. Gộp các thuộc tính trùng lặp cho Header & Footer */
+.header, 
+.footer {
+  color: var(--color-white);
+  text-align: center;
+}
+
+.header {
+  background-color: var(--color-primary);
+  padding: var(--spacing-lg);
+}
+
+.footer {
+  background-color: var(--color-secondary);
+  padding: var(--spacing-md);
+}
+
+/* 4. Nội dung chính & Sidebar */
+.sidebar {
+  background-color: var(--color-bg-light);
+  padding: var(--spacing-lg);
+}
+
+.main {
+  background-color: var(--color-white);
+  padding: var(--spacing-lg);
+  border: 1px solid #ddd;
+}
+
+/* 5. Khu vực Skills (Flexbox) */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.skill-item {
+  background-color: var(--color-accent-bg);
+  color: var(--color-primary);
+  padding: var(--spacing-sm) var(--spacing-lg); /* Shorthand padding: trên-dưới | trái-phải */
+  border-radius: var(--border-radius-pill);
+  font-weight: bold;
+  border: 1px solid var(--color-border);
+}
