@@ -1,0 +1,29 @@
+/* 1. Căn giữa toàn bộ container ra chính giữa màn hình bằng Flexbox */
+.container {
+    
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    min-height: 100vh;       /* Chiều cao phủ toàn bộ màn hình */
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  
+  /* 2. Bố cục lưới CSS Grid 3 cột bằng nhau bên trong container */
+  .grid-container {
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+    gap: 20px;                             /* Khoảng cách giữa các cột/hàng là 20px */
+    width: 100%;
+    max-width: 900px;                      /* Giới hạn chiều rộng để giao diện cân đối */
+  }
+  
+  /* 3. Định dạng từng thẻ cột trong Grid */
+  .grid-item {
+  
+    background-color: #f0f0f0;             /* Màu nền xám nhạt */
+    border-radius: 10px;                   /* Bo góc 10px */
+    padding: 20px;                         /* Khoảng đệm bên trong */
+    text-align: center;                    /* Căn giữa chữ */
+  }
