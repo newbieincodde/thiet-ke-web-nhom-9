@@ -1,0 +1,24 @@
+/* Reset margin/padding mặc định */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Thẻ cha (body hoặc wrapper) chứa khu vực 100vh */
+body {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang (Main Axis) */
+  align-items: center;     /* Căn giữa theo chiều dọc (Cross Axis) */
+  min-height: 100vh;       /* Chiều cao phủ kín toàn màn hình */
+  background-color: #f4f4f9;
+}
+
+/* Thẻ container cần căn giữa */
+.container {
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
