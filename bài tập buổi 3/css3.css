@@ -1,30 +1,29 @@
 /*Hoạt động 3 */
-/* 1. Khai báo biến CSS (CSS Variables) để tái sử dụng */
+/* 1. Khai báo biến CSS (CSS Variables) quản lý giá trị dùng chung */
 :root {
-    --spacing-sm: 10px;
+    --spacing-sm: 8px;
     --spacing-md: 15px;
     --spacing-lg: 20px;
     
-    --color-primary: #2c3e50;
-    --color-secondary: #34495e;
-    --color-bg-light: #ecf0f1;
-    --color-accent-bg: #e8f4f8;
-    --color-border: #bce8f1;
+    --color-primary: #1e293b;
+    --color-dark: #0f172a;
+    --color-bg-light: #f1f5f9;
+    --color-item-bg: #e2e8f0;
     --color-white: #ffffff;
     
-    --border-radius: 10px;
     --border-radius-pill: 20px;
+    --font-weight-bold: 600;
   }
   
-  /* Reset cơ bản */
+  /* 2. Reset CSS cơ bản */
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
   
-  /* 2. Cấu trúc Layout tổng thể (CSS Grid) */
-  .portfolio-layout {
+  /* 3. Layout tổng thể (CSS Grid) */
+  .portfolio-container {
     display: grid;
     grid-template-columns: 250px 1fr;
     grid-template-rows: auto 1fr auto;
@@ -34,7 +33,6 @@
       "footer  footer";
     min-height: 100vh;
     gap: var(--spacing-md);
-    padding: var(--spacing-md);
   }
   
   /* Gán vị trí Grid Area */
@@ -43,8 +41,8 @@
   .main    { grid-area: main; }
   .footer  { grid-area: footer; }
   
-  /* 3. Gộp các thuộc tính trùng lặp cho Header & Footer */
-  .header, 
+  /* 4. Gộp các thuộc tính trùng lặp (Header & Footer) */
+  .header,
   .footer {
     color: var(--color-white);
     text-align: center;
@@ -56,11 +54,11 @@
   }
   
   .footer {
-    background-color: var(--color-secondary);
+    background-color: var(--color-dark);
     padding: var(--spacing-md);
   }
   
-  /* 4. Nội dung chính & Sidebar */
+  /* 5. Nội dung chính & Sidebar */
   .sidebar {
     background-color: var(--color-bg-light);
     padding: var(--spacing-lg);
@@ -69,23 +67,22 @@
   .main {
     background-color: var(--color-white);
     padding: var(--spacing-lg);
-    border: 1px solid #ddd;
   }
   
-  /* 5. Khu vực Skills (Flexbox) */
-  .skills-container {
+  /* 6. Danh mục Skills (Flexbox) */
+  .skills-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--spacing-md);
+    list-style: none;
     margin-top: var(--spacing-md);
   }
   
   .skill-item {
-    background-color: var(--color-accent-bg);
+    background-color: var(--color-item-bg);
     color: var(--color-primary);
-    padding: var(--spacing-sm) var(--spacing-lg); /* Shorthand padding: trên-dưới | trái-phải */
+    padding: var(--spacing-sm) var(--spacing-md); /* Shorthand: trên-dưới | trái-phải */
     border-radius: var(--border-radius-pill);
-    font-weight: bold;
-    border: 1px solid var(--color-border);
+    font-weight: var(--font-weight-bold);
   }
