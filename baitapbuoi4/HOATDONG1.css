@@ -1,0 +1,87 @@
+/* 1. Định nghĩa CSS Variables tại :root */
+:root {
+    /* Màu chủ đạo (Primary & Secondary) */
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+  
+    /* 3 mức xám (Grays) */
+    --gray-dark: #333333;       /* Xám đậm */
+    --gray-medium: #ddd;        /* Xám vừa (đường viền) */
+    --gray-light: #ecf0f1;     /* Xám nhạt (nền sidebar) */
+  
+    /* Nền và các màu phụ trợ */
+    --bg-main: #ffffff;         /* Nền chính */
+    --bg-badge: #e8f4f8;        /* Nền thẻ skill */
+    --border-badge: #bce8f1;    /* Viền thẻ skill */
+    --text-white: #ffffff;      /* Chữ màu trắng */
+  }
+  
+  /* Reset cơ bản */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 2. Cấu trúc Layout tổng thể bằng CSS Grid */
+  .portfolio-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Sidebar 250px, Main chiếm phần còn lại */
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header  header"
+      "sidebar main"
+      "footer  footer";
+    min-height: 100vh;
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--bg-main);
+  }
+  
+  /* Gán các khu vực tương ứng với grid-area */
+  .header {
+    grid-area: header;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+    background-color: var(--gray-light);
+    padding: 20px;
+  }
+  
+  .main {
+    grid-area: main;
+    background-color: var(--bg-main);
+    padding: 20px;
+    border: 1px solid var(--gray-medium);
+  }
+  
+  .footer {
+    grid-area: footer;
+    background-color: var(--secondary-color);
+    color: var(--text-white);
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* 3. Khu vực Skills bằng Flexbox */
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;         /* Tự động xuống dòng khi thiếu không gian */
+    justify-content: center; /* Căn giữa các item */
+    gap: 15px;               /* Khoảng cách giữa các item */
+    margin-top: 15px;
+  }
+  
+  .skill-item {
+    background-color: var(--bg-badge);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 1px solid var(--border-badge);
+  }
