@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Practice</title>
+
+    <style>
+        /* Grid container */
+        .grid-container {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+
+            padding: 20px;
+        }
+
+        /* Các cột */
+        .grid-item {
+            padding: 40px;
+
+            background-color: #eeeeee;
+
+            border-radius: 10px;
+
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+
+        <div class="grid-item">
+            Column 1
+        </div>
+
+        <div class="grid-item">
+            Column 2
+        </div>
+
+        <div class="grid-item">
+            Column 3
+        </div>
+
+    </div>
+
+</body>
+</html>

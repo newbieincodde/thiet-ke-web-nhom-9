@@ -1,0 +1,505 @@
+/* =========================================
+   1. DESIGN SYSTEM - CSS VARIABLES
+   ========================================= */
+
+   :root {
+
+    /* Màu chủ đạo */
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+
+    /* Ba mức màu xám cho chữ */
+    --text-dark: #1f2937;
+    --text-gray: #6b7280;
+    --text-light: #9ca3af;
+
+    /* Màu nền */
+    --background-color: #f3f6fb;
+    --white-color: #ffffff;
+
+    /* Màu viền */
+    --border-color: #e5e7eb;
+
+    /* Typography */
+    --font-main: Arial, sans-serif;
+    --font-size-base: 16px;
+    --heading-line-height: 1.3;
+    --body-line-height: 1.6;
+
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 20px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+
+    /* Kích thước */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+
+    /* Hiệu ứng */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   2. RESET CƠ BẢN
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family: var(--font-main);
+
+    font-size: var(--font-size-base);
+
+    line-height: var(--body-line-height);
+
+    color: var(--text-dark);
+
+    background-color: var(--background-color);
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================================
+   3. HEADER
+   ========================================= */
+
+.header {
+    padding: var(--spacing-md);
+
+    background-color: var(--white-color);
+
+    border-bottom: 1px solid var(--border-color);
+
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: var(--spacing-sm);
+
+    color: var(--primary-color);
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+.navigation {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: var(--spacing-sm);
+}
+
+.navigation a {
+    padding: 8px 12px;
+
+    color: var(--text-gray);
+
+    text-decoration: none;
+
+    border-radius: var(--radius-sm);
+}
+
+.navigation a:hover {
+    color: var(--primary-color);
+
+    background-color: var(--background-color);
+}
+
+
+/* =========================================
+   4. LAYOUT - MOBILE FIRST
+   ========================================= */
+
+.layout {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: var(--spacing-lg) 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: var(--spacing-lg);
+}
+
+
+/* =========================================
+   5. SIDEBAR
+   ========================================= */
+
+.sidebar {
+    padding: var(--spacing-lg);
+
+    background-color: var(--white-color);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto var(--spacing-md);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: var(--primary-color);
+
+    color: var(--white-color);
+
+    font-size: 36px;
+
+    font-weight: bold;
+}
+
+.profile h2 {
+    margin: 0 0 var(--spacing-xs);
+
+    color: var(--secondary-color);
+}
+
+.profile p {
+    margin: 0;
+
+    color: var(--text-gray);
+}
+
+.sidebar-info {
+    margin-top: var(--spacing-lg);
+
+    padding-top: var(--spacing-md);
+
+    border-top: 1px solid var(--border-color);
+}
+
+.sidebar-info h3 {
+    margin-top: 0;
+
+    color: var(--secondary-color);
+}
+
+.sidebar-info p {
+    color: var(--text-gray);
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   6. MAIN CONTENT
+   ========================================= */
+
+.main-content {
+    min-width: 0;
+}
+
+.section {
+    margin-bottom: var(--spacing-xl);
+
+    padding: var(--spacing-lg);
+
+    background-color: var(--white-color);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+}
+
+.section-label {
+    margin: 0 0 var(--spacing-xs);
+
+    color: var(--primary-color);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.section h1,
+.section h2 {
+    margin-top: 0;
+
+    line-height: var(--heading-line-height);
+}
+
+.section h1 {
+    font-size: 30px;
+}
+
+.section h2 {
+    font-size: 25px;
+}
+
+.section p {
+    color: var(--text-gray);
+}
+
+
+/* =========================================
+   7. BUTTON
+   ========================================= */
+
+.button {
+    display: inline-block;
+
+    margin-top: var(--spacing-sm);
+
+    padding: 12px 20px;
+
+    background-color: var(--primary-color);
+
+    color: var(--white-color);
+
+    border-radius: var(--radius-sm);
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* =========================================
+   8. SKILLS - FLEXBOX
+   ========================================= */
+
+.skills-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: var(--spacing-sm);
+}
+
+.skill {
+    padding: 10px 16px;
+
+    background-color: var(--background-color);
+
+    color: var(--secondary-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 30px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   9. SERVICES - MOBILE: 1 CỘT
+   ========================================= */
+
+.services-container {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+}
+
+.service-card {
+    padding: var(--spacing-md);
+
+    background-color: var(--background-color);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-md);
+
+    text-align: center;
+}
+
+.service-icon {
+    margin-bottom: var(--spacing-sm);
+
+    color: var(--primary-color);
+
+    font-size: 32px;
+}
+
+.service-card h3 {
+    margin: 0 0 var(--spacing-xs);
+
+    color: var(--secondary-color);
+}
+
+.service-card p {
+    margin: 0;
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   10. PROJECTS
+   ========================================= */
+
+.projects-container {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: var(--spacing-md);
+}
+
+.project-card {
+    padding: var(--spacing-md);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-md);
+}
+
+.project-card h3 {
+    margin-top: 0;
+
+    color: var(--secondary-color);
+}
+
+
+/* =========================================
+   11. FOOTER
+   ========================================= */
+
+.footer {
+    padding: var(--spacing-lg);
+
+    background-color: var(--secondary-color);
+
+    color: var(--white-color);
+
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+
+/* =========================================
+   12. TABLET
+   TỪ 768px
+   ========================================= */
+
+@media (min-width: 768px) {
+
+    .header {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: var(--spacing-md) 5%;
+
+        text-align: left;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .navigation {
+        justify-content: flex-end;
+    }
+
+    /*
+        Sidebar và Main chuyển thành 2 cột
+    */
+
+    .layout {
+        grid-template-columns: 250px 1fr;
+    }
+
+    /*
+        Services chuyển thành 2 cột
+    */
+
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /*
+        Projects chuyển thành 2 cột
+    */
+
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   13. DESKTOP
+   TỪ 1024px
+   ========================================= */
+
+@media (min-width: 1024px) {
+
+    .layout {
+        grid-template-columns: 280px 1fr;
+    }
+
+    .section {
+        padding: var(--spacing-xl);
+    }
+
+    /*
+        Services chuyển thành 4 cột
+    */
+
+    .services-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .service-card {
+        padding: var(--spacing-md);
+    }
+
+}
