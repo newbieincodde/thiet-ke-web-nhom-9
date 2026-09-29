@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuần 5 - CSS Animations & Theme Toggle</title>
+    <!-- Liên kết tới tệp CSS riêng -->
+    <link rel="stylesheet" href="cssbuoi5.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Chuong Trinh Hoc Tap</div>
+
+        <div class="nav-container">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <ul class="menu">
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#card">Nhân sự</a></li>
+                <li><a href="#parallax">Parallax</a></li>
+                <li><a href="#skills">Kỹ năng</a></li>
+            </ul>
+
+            <!-- Nút đổi màu giao diện -->
+            <button class="theme-btn" id="theme-toggle">
+                <span id="theme-icon">🌙</span>
+                <span id="theme-text">Dark</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <h1>Xin chào!</h1>  
+        <p class="typing">Tôi là một sinh viên Lạc Hồng</p>  <!-- Hiệu ứng hover -->
+        <button class="btn">Gửi tin nhắn</button>
+    </section>
+
+    <!-- SPINNER , Hiệu ứng keyfarm --> 
+    <section class="spinner-section">
+        <h2 class="section-title">Loading Spinner</h2>
+        <div class="spinner"></div>
+        <p>CSS Animation xoay 360 độ vô hạn.</p>
+    </section>
+
+    <!-- CARD FLIP -->
+    <section id="card">
+        <h2 class="section-title">Thông tin</h2>
+        <div class="card-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="card-front">
+                        <img src="https://i.pravatar.cc/300" alt="Avatar">
+                        <h3>Quoc Quang</h3>
+                        <p>Web Developer</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Thông tin liên hệ</h3>
+                        <p>Email: quocquang@gmail.com</p>
+                        <p>Phone: 0123 456 789</p>
+                        <p>Facebook: facebook.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARALLAX -->
+    <section class="parallax" id="parallax">
+        <div>
+            <h2>Creative Web Developer</h2>
+            <p>Thiết kế website hiện đại với CSS Animation</p>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills">
+            <div class="skill">
+                <div class="skill-info"><span>HTML</span><span>90%</span></div>
+                <div class="skill-bar"><div class="skill-progress html"></div></div>
+            </div>
+            <div class="skill">
+                <div class="skill-info"><span>CSS</span><span>85%</span></div>
+                <div class="skill-bar"><div class="skill-progress css"></div></div>
+            </div>
+            <div class="skill">
+                <div class="skill-info"><span>JavaScript</span><span>75%</span></div>
+                <div class="skill-bar"><div class="skill-progress js"></div></div>
+            </div>
+            <div class="skill">
+                <div class="skill-info"><span>UI/UX</span><span>80%</span></div>
+                <div class="skill-bar"><div class="skill-progress ui"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 My Portfolio | CSS Animation</p>
+    </footer>
+
+    <!-- FAB -->
+    <button class="fab" title="Liên hệ">☎</button>
+
+    <!-- Liên kết tới tệp JavaScript riêng -->
+    <script src="script.js"></script>
+
+    <section class="spinner-section">
+        <h2 class="section-title">Loading Spinner</h2>
+        <div class="spinner"></div>
+        <p>CSS Animation xoay 360 độ vô hạn.</p>
+    </section>
+</body>
+</html>

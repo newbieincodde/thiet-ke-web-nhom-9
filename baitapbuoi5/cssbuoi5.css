@@ -1,0 +1,411 @@
+:root {
+    /* Tone màu Light Theme (Mặc định) */
+    --primary-color: #2db9ff;       /* Màu chủ đạo chính (Xanh dương) */
+    --primary-keyfarmes: #ff0000;
+    --primary-hover: #35ac28;       /* Màu chủ đạo khi hover */
+    --primary-light: #dbeafe;       /* Màu nền nhẹ theo tone chủ đạo */
+    --accent-color: #2600fff2;        /* Màu tạo điểm nhấn (Đỏ FAB) */
+    
+    --bg-color: #ffffff;             /* Màu nền trang */
+    --card-bg: #ffffff;              /* Màu nền thẻ/header */
+    --text-color: #222222;           /* Màu chữ chính */
+    --text-muted: #555555;          /* Màu chữ phụ */
+    
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Tone màu Dark Theme (Khi bật chuyển màu) */
+[data-theme="dark"] {
+    --primary-color: #3b82f6;
+    --primary-hover: #60a5fa;
+    --primary-light: #1e293b;
+    --accent-color: #f87171;
+
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --text-muted: #cbd5e1;
+
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   2. RESET & GLOBAL STYLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+section {
+    padding: 80px 8%;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+/* =========================
+   3. HEADER & THEME TOGGLE
+========================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background-color: var(--card-bg);
+    box-shadow: 0 3px 15px var(--shadow-color);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color var(--transition-speed) ease;
+}
+
+.menu a:hover {
+    color: var(--primary-color);
+}
+
+/* Nút Đổi Màu Giao Diện (Theme Toggle Button) */
+.theme-btn {
+    background: var(--primary-light);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--transition-speed) ease;
+}
+
+.theme-btn:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Hamburger Menu */
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    width: 35px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    margin: 6px 0;
+    background-color: var(--text-color);
+    border-radius: 5px;
+    transition: all var(--transition-speed) ease;
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* =========================
+   4. HERO & TYPING EFFECT
+========================= */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-light), var(--bg-color));
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: var(--primary-color);
+}
+
+.typing {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--primary-color);
+    font-size: 24px;
+    color: var(--text-muted);
+    animation: typing 4s steps(35) infinite alternate, blink 0.7s infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 35ch; }
+}
+
+@keyframes blink {
+    50% { border-color: red;}
+}
+
+/* Button Micro-interaction */
+.btn {
+    margin-top: 30px;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(.25, .8, .25, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* =========================
+   5. COMPONENTS & ANIMATIONS
+========================= */
+/* Spinner */
+.spinner-section { text-align: center; }
+
+.spinner {
+    width: 70px;
+    height: 70px;
+    margin: 30px auto;
+    border: 8px solid var(--primary-light);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Card Flip */
+.card-container {
+    display: flex;
+    justify-content: center;
+}
+
+.flip-card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.card-front {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.card-front img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.card-front h3 {
+    color: var(--primary-color);
+}
+
+.card-back {
+    padding: 30px;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Parallax */
+.parallax {
+    min-height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                      url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Skill Bar */
+.skills {
+    max-width: 800px;
+    margin: auto;
+}
+
+.skill { margin-bottom: 25px; }
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.skill-bar {
+    height: 15px;
+    background-color: var(--primary-light);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    width: 0;
+    border-radius: 20px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+    animation: skillAnimation 2s ease-out forwards;
+}
+
+.html { --skill: 90%; }
+.css  { --skill: 85%; }
+.js   { --skill: 75%; }
+.ui   { --skill: 80%; }
+
+@keyframes skillAnimation {
+    from { width: 0; }
+    to { width: var(--skill); }
+}
+
+/* Floating Action Button */
+.fab {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 65px;
+    height: 65px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
+    70% { transform: scale(1.08); box-shadow: 0 0 0 20px rgba(239, 68, 68, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* Footer */
+footer {
+    padding: 30px;
+    text-align: center;
+    background-color: var(--card-bg);
+    color: var(--text-muted);
+    border-top: 1px solid var(--primary-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger { display: block; }
+    .menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        background-color: var(--card-bg);
+        box-shadow: 0 10px 20px var(--shadow-color);
+    }
+    #menu-toggle:checked ~ .menu { display: flex; }
+}
